@@ -15,15 +15,18 @@ fun main(){
     try {
         println(f0(10.0))
     }catch(e: Exception){
-        println("Przechwycono wyjątek: ")
+        println("${e.message}")
+    }finally {
+        println("Ten blok wykona się zawsze...")
     }
+
+    println("Dalszy ciąg programu...")
 }
 
-@Throws(Exception::class)
 fun f0(x: Double):Double{
     //chcielibyśmy żeby argument należał od -1 do 1
     if(x<-1||x>1){
-        throw Exception("Wiadomość...")
+        throw Exception("Argument funkcji powinien należeć od -1 do 1 a wprowadzono ${x}")
     }
     return x
 }
