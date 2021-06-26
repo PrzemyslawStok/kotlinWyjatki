@@ -18,7 +18,7 @@ fun main(){
 fun f0(x: Double):Double{
     //chcielibyśmy żeby argument należał od -1 do 1
     if(x<-1||x>1){
-        throw Exception("")
+        throw Exception("Wiadomość...")
     }
     return x
 }
