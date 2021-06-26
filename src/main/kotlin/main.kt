@@ -12,9 +12,14 @@ fun main(){
 
     println("Dalszy ciąg programu...")
 
-    println(f0(110.5))
+    try {
+        println(f0(10.0))
+    }catch(e: Exception){
+        println("Przechwycono wyjątek: ")
+    }
 }
 
+@Throws(Exception::class)
 fun f0(x: Double):Double{
     //chcielibyśmy żeby argument należał od -1 do 1
     if(x<-1||x>1){
