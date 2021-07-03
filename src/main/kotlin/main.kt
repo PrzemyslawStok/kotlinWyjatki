@@ -1,4 +1,5 @@
 import java.lang.Exception
+import java.lang.IllegalArgumentException
 import java.lang.RuntimeException
 
 fun main(){
@@ -16,7 +17,7 @@ fun main(){
 
     try {
         f1(0.0, 12.0)
-    }catch(e: Exception){
+    }catch(e: IllegalArgumentException){
         println("Funkcja nie działa: ${e.message}")
     }
 }
@@ -48,10 +49,10 @@ fun f1(x: Double, y: Double){
     //proszę utworzyć trzy wyjątki
 
     if(x==0.0)
-        throw Exception("x nie może wynosić 0")
+        throw IllegalArgumentException("x nie może wynosić 0")
 
     if(y==0.0)
-        throw Exception("y nie może wynosić 0")
+        throw IllegalArgumentException("y nie może wynosić 0")
 
     if(x+y>=10)
         throw Exception("Suma parametrów powinna być mniejsza od 10 a wynosi ${x+y}")
