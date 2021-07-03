@@ -16,7 +16,7 @@ fun main(){
     exceptionExample1()
 
     try {
-        f1(0.0, 12.0)
+        f1(2.0, 12.0)
     }catch(e: IllegalArgumentException){
         println("Funkcja nie działa: ${e.message}")
     }
@@ -44,6 +44,8 @@ fun f0(x: Double):Double{
     return x
 }
 
+class FunctionArgumentException(message: String): Exception(message)
+
 fun f1(x: Double, y: Double){
     //chcielibyśmy, żeby oba parametry były dodanie i ich suma mniejsza od 10
     //proszę utworzyć trzy wyjątki
@@ -55,7 +57,7 @@ fun f1(x: Double, y: Double){
         throw IllegalArgumentException("y nie może wynosić 0")
 
     if(x+y>=10)
-        throw Exception("Suma parametrów powinna być mniejsza od 10 a wynosi ${x+y}")
+        throw FunctionArgumentException("Suma parametrów powinna być mniejsza od 10 a wynosi ${x+y}")
 }
 
 fun div(x: Double, y: Double):Double{
