@@ -12,7 +12,13 @@ fun main(){
 
     println("Dalszy ciąg programu...")
 
-    try {
+    exceptionExample1()
+
+    f1(0.0, 0.0)
+}
+
+fun exceptionExample1(){
+    val a = try {
         println(f0(10.0))
     }catch(e: Exception){
         println("${e.message}")
@@ -21,6 +27,8 @@ fun main(){
     }
 
     println("Dalszy ciąg programu...")
+
+    div(5.0,0.0)
 }
 
 fun f0(x: Double):Double{
@@ -29,4 +37,13 @@ fun f0(x: Double):Double{
         throw Exception("Argument funkcji powinien należeć od -1 do 1 a wprowadzono ${x}")
     }
     return x
+}
+
+fun f1(x: Double, y: Double){
+    //chcielibyśmy, żeby oba parametry były dodanie i ich suma mniejsza od 10
+    //proszę utworzyć trzy wyjątki
+}
+
+fun div(x: Double, y: Double):Double{
+    return x/y
 }
