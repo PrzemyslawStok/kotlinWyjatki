@@ -16,9 +16,11 @@ fun main(){
     exceptionExample1()
 
     try {
-        f1(2.0, 12.0)
+        f1(10.0, 12.0)
     }catch(e: IllegalArgumentException){
         println("Funkcja nie działa: ${e.message}")
+    }catch(e: FunctionArgumentException){
+        println("Przechwycono nasz wyjątek: ${e.message}")
     }
 }
 
