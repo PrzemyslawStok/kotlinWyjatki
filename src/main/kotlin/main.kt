@@ -14,7 +14,11 @@ fun main(){
 
     exceptionExample1()
 
-    f1(0.0, 0.0)
+    try {
+        f1(8.0, 12.0)
+    }catch(e: Exception){
+        println("Funkcja nie działa: ${e.message}")
+    }
 }
 
 fun exceptionExample1(){
@@ -42,6 +46,11 @@ fun f0(x: Double):Double{
 fun f1(x: Double, y: Double){
     //chcielibyśmy, żeby oba parametry były dodanie i ich suma mniejsza od 10
     //proszę utworzyć trzy wyjątki
+
+    //if(x==0.0)
+
+    if(x+y>=10)
+        throw Exception("Suma parametrów powinna być mniejsza od 10 a wynosi ${x+y}")
 }
 
 fun div(x: Double, y: Double):Double{
