@@ -12,7 +12,7 @@ fun main() {
         println("Macierz nie zawiera elemntu o indeksie ${e.message}")
     }
 
-    println("Suma elementów wynosi: ${elementsSum(array, 20)}")
+    println("Suma elementów wynosi: ${elementsSum(array, 100)}")
 
     println("Dalszy ciąg programu...")
 
@@ -35,8 +35,9 @@ fun elementsSum(tab: Array<Int>, noElements: Int): Int {
     for (i in 0..noElements - 1)
         try {
             sum += tab[i]
-        }finally {
-
+        }catch(e:ArrayIndexOutOfBoundsException) {
+            println("Indeks macierzy ${e.message} nie istnieje.")
+            break
         }
 
     return sum
