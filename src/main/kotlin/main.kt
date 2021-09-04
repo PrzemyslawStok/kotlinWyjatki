@@ -11,6 +11,7 @@ fun main(){
         println("Macierz nie zawiera elemntu o indeksie ${e.message}")
     }
 
+
     println("Dalszy ciąg programu...")
 
     exceptionExample1()
